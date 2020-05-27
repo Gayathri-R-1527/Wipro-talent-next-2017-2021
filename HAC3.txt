@@ -1,0 +1,59 @@
+2)ARRANGE ARRAY:
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+       int i;
+       int len = str.length();
+       String low="";
+       String up="";
+       char ch;
+       for(i=0;i<len;i++)
+       {
+           if(ch>='A'&& ch<='Z')
+           {
+               up+=ch;
+           }
+           else
+           {
+               low+=ch;
+           }
+       }
+       return low+up;
+
+    }
+}
+
+1)SORT ELEMENTS BY FREQUENCY
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        int i,j,t;
+        int a[]=new int[];
+        for( i=0;i<n;i++)
+        {
+            a[i]=s.nextlen();
+        }
+        for(j=i+1;j<n;j++)
+        {
+            if (a[i]>a[j])
+            {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+}
