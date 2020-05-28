@@ -1,0 +1,56 @@
+							LANGUAGE BASICS
+
+1)ACCEPT 2 STRINGS :
+
+class Main
+
+{
+
+ public static void main(String args[])
+
+ {
+
+  System.out.println(args[0] + “ technologies ”);
+
+  System.out.println(args[1]);
+
+   }
+
+}
+
+2)WELCOME MESSAGE:
+
+import java.util.*;
+
+ class Main {
+  
+    public static void main(String args[])
+    {
+      
+
+ 
+		System.out.println("Welcome " + args[0]);
+
+	}
+}
+
+3)SUM OF 2 NUMBERS:
+
+import java.util.*;
+
+ class Main {
+  
+    public static void main(String args[])
+    {
+      
+
+ 
+		int a = Integer.parseInt(args[0]);
+		int b = Integer.parseInt(args[1]);
+		int c = a + b;
+		
+		System.out.printf("The sum of %d and %d is %d", a, b, c);
+
+	}
+
+}
