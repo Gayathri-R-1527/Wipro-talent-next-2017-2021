@@ -1,0 +1,54 @@
+									CLASS AND OBJECTS
+
+1)BOX:
+
+import java.util.*;
+
+public class Main {
+    double h,w,d;
+
+     Main(double width,double height,double depth)
+    {
+        h=height;
+        w=width;
+        d=depth;
+    }
+    double volume()
+    { double v;
+    v=h*w*d;
+    return v;
+    }
+   
+    public static void main(String[] args) {
+       
+    Main bc = new Main(1.5,29.5,2.7);
+    System.out.println(bc.volume());
+
+    }
+
+}
+
+2)CALCULATOR:
+
+
+import java.util.*;
+
+public class Main {
+  public static void main(String args[]){
+    System.out.println(Calculator.powerDouble(77.0, 2));
+    System.out.println(Calculator.powerInt(80,3));
+    }
+}
+
+class Calculator
+{
+    static double powerInt(int num1,int num2)
+    {
+        return Math.pow(num1,num2);
+    }
+static double powerDouble(double num1,int num2)
+{
+    return Math.pow(num1,num2);
+}
+}
+
