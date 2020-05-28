@@ -1,0 +1,501 @@
+								FLOW CONTROL STATEMENTS
+
+1)POSITIVE,NEGATIVE,ZERO:
+
+import java.util.*;
+
+
+class Main {
+  public static void main(String[] args) {
+   
+    Scanner sc= new Scanner (System.in);
+    System.out.print("Enter number 1:");
+    int num1=sc.nextInt();
+    
+    if(num1>0)
+      System.out.println("The number"+num1+"is positive");
+    else if(num1<0)
+      System.out.println("The number"+num1+"is negative");
+    else
+      System.out.println("The number"+num1+"is equal to 0");
+  }
+}
+
+2)EVEN OR ODD:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+   
+    Scanner sc= new Scanner (System.in);
+    System.out.print("Enter number 1:");
+    int num1=sc.nextInt();
+    
+    if(num1%2==0)
+      System.out.println("The number"+num1+"is even");
+    else 
+      System.out.println("The number"+num1+"is odd");
+    
+  }
+}
+
+3) COMMAND LINE ARGUMENT:
+
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+    if(args.length==0)
+    {
+      System.out.println("no values");
+    }
+    else{
+      for(int i=0;i<=args.length;i++)
+    System.out.println(args[i]+" , ");
+    }
+  }
+}
+
+
+4)INITIALIZE AND DISPLAY CHARACTER IN ALPHABETICAL ORDER:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+  char ch1,ch2;
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter character 1:");
+  ch1=sc.next().charAt(0);
+  System.out.println("enter character 2:");
+  ch2=sc.next().charAt(0);
+  if(ch1>ch2)
+  {
+    System.out.println(ch2+","+ch1);
+  }
+  else{
+   System.out.println(ch1+","+ch2);
+  } 
+  }
+  
+  }
+
+5)ALPHABET,DIGIT,SPECIAL CHARACTER:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+  char ch1;
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter character 1:");
+  ch1=sc.next().charAt(0);
+  if((ch1>='a' && ch1<='z')||(ch1>='A' && ch1<='Z'))
+    {
+        System.out.print("Entered character"+ ch1 + "is Alphabet");
+    }
+  else if(ch1>=48 && ch1<=57)
+    {
+        System.out.print("Entered character"+ ch1 + "isDigit");
+
+    }
+    
+    else
+    {
+        System.out.print("Entered character"+ ch1 + "is special character");
+
+    }
+  }
+  
+  }
+6)ACCEPT GENDER AND PRINT PERCENTAGE:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    String gen=args[0];
+    int age= Integer.parseInt(args[1]);
+    if(gen.equalsIgnoreCase("Female"))
+    {
+      if(age>=1 && age<=58)
+      {
+        System.out.println("Interest == 8.2%");
+      }
+      else if (age>=58 && age<=120)
+      {
+        System.out.println("Interest == 7.6%");
+      }
+    }
+      else
+      {
+        if(age>=1 && age<=60)
+      {
+        System.out.println("Interest == 9.2%");
+      }
+      else if(age>=60 && age<=120)
+      {
+        System.out.println("Interest == 8.3%");
+      }
+      }
+      
+  }
+}
+
+7)UPPER CASE TO LOWER CASE AND VICEVERSA:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    char ch=s.next().charAt(0);
+    int temp;
+    if(ch>='a' && ch<='z')
+    {
+      System.out.println(ch+"->");
+      temp=(int)ch;
+      ch=(char)(temp-32);
+      System.out.println(ch);
+    }
+    else
+    {
+      System.out.println(ch+"->");
+      temp=(int)ch;
+      ch=(char)(temp+32);
+      System.out.println(ch);
+
+    }
+  }
+}
+
+
+8)COLOURS WITH SWITCH CASE:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter starting colour in caps :");
+    char ch=s.next().charAt(0);
+    switch(ch){
+    case 'R':
+    System.out.println("Red");
+    break;
+    case 'Y':
+    System.out.println("Yellow");
+    break;
+    case 'G':
+    System.out.println("Green");
+    break;
+    case 'B':
+    System.out.println("Blue");
+    break;
+    case 'w':
+    System.out.println("White");
+    break;
+    case 'O':
+    System.out.println("Orange");
+    break;
+    
+    default:
+    System.out.println("Invalid month");
+    }
+       
+  }
+}
+
+9)MONTHS WITH SWITCH CASE:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter corresponding number of a month :");
+    int n=s.nextInt();
+    switch(n){
+    case 1:
+    System.out.println("January");
+    break;
+    case 2:
+    System.out.println("February");
+    break;
+    case 3:
+    System.out.println("March");
+    break;
+    case 4:
+    System.out.println("April");
+    break;
+    case 5:
+    System.out.println("May");
+    break;
+    case 6:
+    System.out.println("June");
+    break;
+    case 7:
+    System.out.println("July");
+    break;
+    case 8:
+    System.out.println("August");
+    break;
+    case 9:
+    System.out.println("September");
+    break;
+    case 10:
+    System.out.println("October");
+    break;
+    case 11:
+    System.out.println("November");
+    break;
+    case 12:
+    System.out.println("December");
+    break;
+    default:
+    System.out.println("Invalid month");
+    }
+       
+  }
+}
+
+10)1 TO 10 IN A SINGLE ROW:
+
+class Main {
+  public static void main(String[] args) {
+    for(int i = 1; i <= 10; i++) {
+   System.out.print(" " + i);
+   
+   
+}
+  }
+}
+
+11)PRINT EVEN NUMBERS FROM 23 TO 57:
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("The even numbers between 23 and 57 are:");
+    for(int i = 23; i <57; i++)
+    { 
+      if(i%2==0)
+      {
+        
+        System.out.println(i);
+      }
+   
+}
+  }
+}
+
+
+12)CHECK PRIME OR NOT:
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    boolean prime=false;
+    for(int i = 2; i <= n/2; ++i)
+        {
+            
+            if(n % i == 0)
+            {
+                prime= true;
+                break;
+            }
+        }
+
+        if (!prime)
+            System.out.println(n + " is a prime number.");
+        else
+            System.out.println(n + " is not a prime number.");
+    }
+}
+
+
+13)PRINT NUMBERS FROM 1 TO 99:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    int i =0;
+       int num =0;
+       
+       String  primeNumbers = "";
+
+       for (i = 10; i < 100; i++)         
+       { 		  	  
+          int counter=0; 	  
+          for(num =i; num>=1; num--)
+	  {
+             if(i%num==0)
+	     {
+ 		counter = counter + 1;
+	     }
+	  }
+	  if (counter ==2)
+	  {
+	     
+	     primeNumbers = primeNumbers + i + " ";
+	  }	
+       }	
+       System.out.println("Prime numbers from 10 to 99 are :");
+       System.out.println(primeNumbers);
+   }
+}
+
+
+14) GIVEN NUMBER PRIME OR NOT:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    boolean prime=false;
+    if(n==1||n==0)
+        {
+          System.out.println(n + "is neither a prime or composite number");
+           
+        }
+     
+    for(int i = 2; i <= n/2; ++i)
+        {
+            
+            if(n % i == 0)
+            {
+                prime= true;
+                break;
+            }
+        }
+      
+        if (!prime){
+            System.out.println(n + " is a prime number.");
+             }
+        
+        else
+            System.out.println(n + " is not a prime number.");
+    }
+}
+
+
+15)SUM OF DIGITS:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    int sum=0,rem=0;
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter n :");
+    int n=s.nextInt();
+    while(n>0)
+    {
+      rem=n%10;
+      sum=sum+rem;
+      n=n/10;
+    }
+    System.out.println("Sum of Digits : "+ sum);
+    
+  }
+}
+
+16)* IN FLOYD'S FORMAT:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    for(int i=1;i<=n;i++)
+    {
+      for(int j=1;j<=i;j++)
+      {
+        System.out.print("* ");
+      }
+      System.out.println();
+    }
+    }
+}
+
+17)REVERSE THE NUMBER:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    
+       
+        int  rev = 0;
+
+        while(n!= 0) {
+            int digit = n % 10;
+            rev = rev * 10 + digit;
+            n /= 10;
+        }
+
+        System.out.println("Reversed Number: " + rev);
+    }
+}
+
+
+18)PALINDROME OR NOT:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    
+        int rev_int = 0, rem, ori_int;
+
+        ori_int = n;
+
+         
+        while( n != 0 )
+        {
+            rem = n % 10;
+            rev_int = rev_int * 10 + rem;
+            n /= 10;
+        }
+
+        
+        if (ori_int == rev_int)
+            System.out.println(ori_int + " is a palindrome.");
+        else
+            System.out.println(ori_int + " is not a palindrome.");
+    }
+}
+ 19)FIRST FIVE NUMBERS:
+
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    int count=0,i=1;
+    {
+      while(count<5)
+      {
+        if(i%2==0 && i%3==0 && i%5==0)
+        {
+          System.out.println(i);
+          count++;
+        }
+        i++;
+      }
+    }
+  }}
+
+
+
