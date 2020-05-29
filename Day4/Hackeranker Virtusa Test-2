@@ -1,0 +1,198 @@
+3)POWERS OF 2:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'isPower' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static List<Integer> isPower(List<Integer> arr) {
+    // Write your code here
+        int j = 0;
+    int n = arr.size();
+    List<Integer> res = new ArrayList(n);
+     for(int i: arr){
+         if (i == 0){
+          res.add(j,0);
+          j++;}
+        else {
+          while (i != 1) { 
+            if (i % 2 != 0) {
+              res.add(j,0);
+              j++;}
+              else{
+            i = i / 2;} 
+        } 
+          res.add(j,1);
+          j++;
+ 
+     }
+ 
+    }
+    return res;
+    }
+
+}
+
+public class Solution {
+public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < arrCount; i++) {
+            int arrItem = Integer.parseInt(bufferedReader.readLine().trim());
+            arr.add(arrItem);
+        }
+
+        List<Integer> result = Result.isPower(arr);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+
+2)BALANCED ARRAY:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'balancedSum' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int balancedSum(List<Integer> arr) {
+    // Write your code here
+    List<Integer> res = new ArrayList(n);
+     for(int i: arr){
+         sum=sum+i;
+         if(sum==n)
+         {
+             return i;
+         }
+            
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < arrCount; i++) {
+            int arrItem = Integer.parseInt(bufferedReader.readLine().trim());
+            arr.add(arrItem);
+        }
+
+        int result = Result.balancedSum(arr);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+1)RIVER RECORDS: 
+
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'maxTrailing' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int maxTrailing(List<Integer> arr) {
+    // Write your code here
+    int sub=0;
+    for(int i:arr)
+    {
+        sub=sub-arr;
+    }
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < arrCount; i++) {
+            int arrItem = Integer.parseInt(bufferedReader.readLine().trim());
+            arr.add(arrItem);
+        }
+
+        int result = Result.maxTrailing(arr);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
