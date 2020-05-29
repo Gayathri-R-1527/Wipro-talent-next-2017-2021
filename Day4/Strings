@@ -1,0 +1,261 @@
+			STRINGS
+
+1)PALINDROME OR NOT:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+Scanner s=new Scanner(System.in);
+    System.out.println("enter number:");
+    int n=s.nextInt();
+    
+        int rev_int = 0, rem, ori_int;
+
+        ori_int = n;
+
+         
+        while( n != 0 )
+        {
+            rem = n % 10;
+            rev_int = rev_int * 10 + rem;
+            n /= 10;
+        }
+
+        
+        if (ori_int == rev_int)
+            System.out.println(ori_int + " is a palindrome.");
+        else
+            System.out.println(ori_int + " is not a palindrome.");
+    }
+}
+
+
+2)CONCATE:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+
+      Scanner s = new Scanner(System.in);
+ 
+      System.out.println("Enter  string1:");
+      String s1 = s.nextLine();
+      System.out.println("Enter  string2:");
+      String s2 = s.nextLine();
+
+      int length1 = s1.length();
+      int length2 = s2.length();
+ 
+      
+      String s3 = s1.concat(s2);
+      System.out.println(s3);
+   }
+}
+
+
+3)STRING MADE OF N COPIES:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+
+      String s = "Wipro";
+		int n = s.length();
+		
+		String repeater = "";
+		if (n < 2) repeater = s;
+		else repeater = s.substring(0, 2);
+		String output = "";
+		for (int i = 0; i < n; i++) {
+			output = output+repeater;
+}
+	System.out.println(output);
+}
+}
+
+
+4)STRING OF EVEN LENGTH:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s = "CatDogs";
+		String output;
+		if (s.length() % 2 == 0) {
+			out = s.substring(0, s.length() / 2);
+		} else {
+			out = null;
+		}
+		System.out.println(out);
+	}
+}
+
+
+5)RETURNING VERSION WITHOUT FIRST AND LAST CHARACTER:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String str = "Wipro";
+		str = str.substring(1, str.length() - 1);
+		System.out.println(str);
+}
+}
+
+6)SHORT+LONG+SHORT:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String a = "hi";
+		String b = "hello";
+		String out;
+          if (a.length() < b.length()) 
+			out = a + b + a;
+		else
+			out = b + a + b;
+                 System.out.println(out);
+	}
+}
+
+7)RETURN STRING WITHOUT X:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s = "xHix";
+		if (s.charAt(0) == 'x')
+			s = s.substring(1, s.length());
+		if (s.charAt(s.length() - 1) == 'x')
+			s = s.substring(0, s.length() - 1);
+		System.out.println(s);
+}
+}
+
+8)WORD AND SEPARATOR
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s1 = "Wipro";
+		String s2 = "X";
+		int separator = 3;
+		StringBuffer sbuf = new StringBuffer();
+		for (int i = 0 ; i < separator - 1; i++) 
+			sbuf.append(s1).append(s2);
+		sbuf.append(s1);
+		System.out.println(sbuf);
+	}
+}
+
+9)*:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s = "ab*cd";
+		String[] ss = s.split(".[\\*]+.");
+		StringBuffer sbuf = new StringBuffer();
+		for (String x : ss)
+			sbuf.append(x);
+System.out.println(sbuf);
+}
+}
+
+10)RETURN A BIGGER STRING:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+		String a = "Helloo";
+		String b = "World123abc";
+   		 String bigger = a.length() > b.length() ? a : b;
+		String smaller = a.length() < b.length() ? a : b;
+    		StringBuffer sbuf = new StringBuffer();
+   		 for (int i = 0; i < smaller.length(); i++) {
+			sbuf.append(a.charAt(i)).append(b.charAt(i));
+		}
+		sbuf.append(bigger.substring(smaller.length(), bigger.length()));
+		System.out.println(sbuf);
+	}
+}
+
+11)RETURN STRING:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String a = "abc";
+		String b = "xyz";
+		String bigger = a.length() > b.length() ? a : b;
+		String smaller = a.length() < b.length() ? a : b;
+    StringBuffer sbuff = new StringBuffer();
+    for (int i = 0; i < smaller.length(); i++) {
+			sbuff.append(a.charAt(i)).append(b.charAt(i));
+		}
+		sbuff.append(bigger.substring(smaller.length(), bigger.length()));
+		System.out.println(sbuff);
+	}
+}
+
+12) N REPETITIONS:
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s = "Wipro";
+		int n = 3;
+		StringBuffer sbuf = new StringBuffer();
+			for (int i = 0; i < n; i++) {
+			sbuf.append(s.substring(s.length() - n));
+		}
+System.out.println(sbuf);
+	}
+}
+
+
+13)
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    
+String s1 = "abcXY123XYijk"; 
+		String s2 = "XY";
+		StringBuffer sbuff = new StringBuffer();
+		while (s1.indexOf(s2) != -1) {	
+			int index = s1.indexOf(s2);
+			if (index == 0 && index + s2.length() < s1.length() - 1) {
+				sbuff.append(s1.charAt(index + s2.length()));
+				s1 = s1.replaceFirst(s2, "");
+				continue;
+			}
+			if (index - 1 >= 0 && index + s2.length() >= s1.length()) {
+				sbuff.append(s1.charAt(index - 1));
+				s1 = s1.replaceFirst(s2, "");
+				continue;
+			}
+			if (index + s2.length() < s1.length() - 1 && index - 1 >= 0) {
+				sbuff.append(s1.charAt(index - 1));
+				sbuff.append(s1.charAt(index + s2.length()));
+				s1 = s1.replaceFirst(s2, "");
+			}
+		}
+
+		System.out.println(sbuff);
+	}
+
+}
+
