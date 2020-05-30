@@ -1,0 +1,198 @@
+1)BUCKET FILL:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'strokesRequired' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts STRING_ARRAY picture as parameter.
+     */
+     
+
+    public static int strokesRequired(List<String> picture) {
+    // Write your code here
+        for(int i=0;i<picture.length;i++)
+        {
+            for(int j=i;j<i+1;j++)
+            {
+                return i;
+            }
+        }
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int pictureCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<String> picture = new ArrayList<>();
+
+        for (int i = 0; i < pictureCount; i++) {
+            String pictureItem = bufferedReader.readLine();
+            picture.add(pictureItem);
+        }
+
+        int result = Result.strokesRequired(picture);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+2)KEYPAD:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'entryTime' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. STRING s
+     *  2. STRING keypad
+     */
+
+    public static int entryTime(String s, String keypad) {
+    // Write your code here
+     int n=0;
+       if(keypad==null || n<=0)
+       {
+           return 0;
+       }
+             if(n==1)
+                {
+                    return 1;
+                }
+    }
+    }
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        String keypad = bufferedReader.readLine();
+
+        int result = Result.entryTime(s, keypad);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+3)ALPHABETICALLY SMALLEST INTEGER:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'smallestString' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING_ARRAY substrings as parameter.
+     */
+     static void sort( String [] a,int n) 
+   { 
+      
+    
+    for(int i = 0;i < n;i++) 
+    { 
+        for(int j = i + 1;j < n;j++) 
+        { 
+              
+            
+            if((a[i] + a[j]).compareTo(a[j] + a[i]) > 0) 
+            { 
+                String s = a[i]; 
+                a[i] = a[j]; 
+                a[j] = s; 
+            } 
+        } 
+    }
+    
+   }
+
+    public static String smallestString(List<String> substrings) {
+    
+    int  n=substrings.size();
+        String[] a=new String[substrings.size()];
+        for (int i =0; i < n; i++) 
+            a[i] = substrings.get(i); 
+
+      sort(a,n); 
+  
+     
+    String answer = ""; 
+    for (int i = 0; i < n; i++) 
+        answer += a[i]; 
+  
+    return answer;
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int substringsCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<String> substrings = new ArrayList<>();
+
+        for (int i = 0; i < substringsCount; i++) {
+            String substringsItem = bufferedReader.readLine();
+            substrings.add(substringsItem);
+        }
+
+        String result = Result.smallestString(substrings);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
