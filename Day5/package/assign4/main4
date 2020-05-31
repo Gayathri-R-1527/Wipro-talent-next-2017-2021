@@ -1,0 +1,28 @@
+package Day5.package.assign4;
+
+import com.automobile.four-wheeler.ford;
+import com.automobile.four-wheeler.Logan;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Logan logan = new Logan("ASD", "AB14H5678", "Bob ", 220, 1);
+		logan.getModelName();
+		logan.getOwnerName();
+		logan.getRegistrationNumber();
+		logan.speed();
+		System.out.println("GPS? " + logan.gps());
+		
+		System.out.println();
+		
+		Ford ford = new Ford(" GST", "AB14H1235", "Alice", 300, 1);
+		ford.getModelName();
+		ford.getOwnerName();
+		ford.getRegistrationNumber();
+		ford.speed();
+		System.out.println("Acess to AC? " + ford.tempControl());
+		
+
+	}
+
+}
