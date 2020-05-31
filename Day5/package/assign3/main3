@@ -1,0 +1,27 @@
+package Day5.package.assign3;
+
+import com.automobile.Honda;
+import com.automobile.twowheeler.Hero;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Hero hero = new Hero("Super 2.0", "CH15G2729", "Bob ", 85);
+		hero.getModelName();
+		hero.getOwnerName();
+		hero.getRegistrationNumber();
+		hero.getSpeed();
+		hero.radio();
+		
+		System.out.println();
+		
+		Honda honda = new Honda("Honda", "CH04G2909", "Alice", 110);
+		honda.getModelName();
+		honda.getOwnerName();
+		honda.getRegistrationNumber();
+		honda.getSpeed();
+		honda.cdplayer();
+
+	}
+
+}
