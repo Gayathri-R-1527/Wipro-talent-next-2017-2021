@@ -1,0 +1,21 @@
+package Day5.package.assign2.compartment;
+
+public class Compartment {
+	public double height;
+	public double width;
+	public double breadth;
+	
+	public Compartment(double height, double width, double breadth) {
+		super();
+		this.height = height;
+		this.width = width;
+		this.breadth = breadth;
+	}
+
+	@Override
+	public String toString() {
+		return "Compartment [height=" + height + ", width=" + width + ", breadth=" + breadth + "]";
+	}
+
+	
+}
