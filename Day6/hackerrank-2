@@ -1,0 +1,247 @@
+3)FOOTBALL SCORES:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'counts' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY teamA
+     *  2. INTEGER_ARRAY teamB
+     */
+
+    public static List<Integer> counts(List<Integer> teamA, List<Integer> teamB) {
+    // Write your code here
+    List<Integer> li= new ArrayList();
+        for(Integer k:teamB)
+        {
+            Integer count=0;
+            for(Integer l: teamA)
+            {
+                if(k>=l)
+                {
+                    count++;
+                }
+            }
+
+                li.add(count);
+            }
+
+
+        return li;       
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int teamACount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> teamA = new ArrayList<>();
+
+        for (int i = 0; i < teamACount; i++) {
+            int teamAItem = Integer.parseInt(bufferedReader.readLine().trim());
+            teamA.add(teamAItem);
+        }
+
+        int teamBCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> teamB = new ArrayList<>();
+
+        for (int i = 0; i < teamBCount; i++) {
+            int teamBItem = Integer.parseInt(bufferedReader.readLine().trim());
+            teamB.add(teamBItem);
+        }
+
+        List<Integer> result = Result.counts(teamA, teamB);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+
+2)COUNT STRING PEERMUTATION:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'countPerms' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static int countPerms(int n) {
+    // Write your code here
+    if (n == 1) 
+    return 5;
+
+        long mod = 1000000007L;
+
+        
+        long[] prev = new long[5];
+        long[] cur = new long[5];
+
+        long sumPrev = 4;
+        for (int j = 0; j < 5; j++) prev[j] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            
+            cur[0] = prev[1];
+            
+            cur[1] = (prev[0] + prev[2]) % mod;
+            
+            cur[2] = sumPrev;
+            
+            cur[3] = (prev[2] + prev[4]) % mod;
+            
+            cur[4] = prev[0];
+
+            sumPrev = 0;
+            for (int j = 0; j < 5; j++)
+            {
+                prev[j] = cur[j];
+                if (j != 2) sumPrev += prev[j];
+            }
+            sumPrev %= mod;
+        }
+
+        long result = (cur[0] + cur[1] + cur[2] + cur[3] + cur[4]) % mod;
+
+        return (int)result;
+    }
+
+
+    }
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int result = Result.countPerms(n);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+1)BUS STAND:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'kthPerson' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY p
+     *  3. INTEGER_ARRAY q
+     */
+
+    public static List<Integer> kthPerson(int k, List<Integer> p, List<Integer> q) {
+    // Write your code here
+    for(int i:p)
+    {
+            if(p>=q)
+            {
+                return p;
+            }
+    }
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int k = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int pCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> p = new ArrayList<>();
+
+        for (int i = 0; i < pCount; i++) {
+            int pItem = Integer.parseInt(bufferedReader.readLine().trim());
+            p.add(pItem);
+        }
+
+        int qCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> q = new ArrayList<>();
+
+        for (int i = 0; i < qCount; i++) {
+            int qItem = Integer.parseInt(bufferedReader.readLine().trim());
+            q.add(qItem);
+        }
+
+        List<Integer> result = Result.kthPerson(k, p, q);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
