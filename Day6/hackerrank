@@ -1,0 +1,119 @@
+PRODUCT DEFECTS:
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'largestArea' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts 2D_INTEGER_ARRAY samples as parameter.
+     */
+
+    public static int largestArea(List<List<Integer>> samples) {
+    // Write your code here
+
+        for (int i=0;i<samples.length;i++)
+        {
+            for (int j=0;j<i;j++)
+            {
+                for (int k:samples)
+                {
+                    int sum=sum+0;
+                }
+            }
+            return 0;
+        }
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int samplesRows = Integer.parseInt(bufferedReader.readLine().trim());
+        int samplesColumns = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<List<Integer>> samples = new ArrayList<>();
+
+        for (int i = 0; i < samplesRows; i++) {
+            String[] samplesRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+            List<Integer> samplesRowItems = new ArrayList<>();
+
+            for (int j = 0; j < samplesColumns; j++) {
+                int samplesItem = Integer.parseInt(samplesRowTempItems[j]);
+                samplesRowItems.add(samplesItem);
+            }
+
+            samples.add(samplesRowItems);
+        }
+
+        int result = Result.largestArea(samples);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+2)FUN WITH VOWELS:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'longestVowelSubsequence' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static int longestVowelSubsequence(String s) {
+    // Write your code here
+        if(s!="a,e,i,o,u")
+        {
+            int count=0;
+            count++;
+        }
+        return 0;
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        int result = Result.longestVowelSubsequence(s);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
