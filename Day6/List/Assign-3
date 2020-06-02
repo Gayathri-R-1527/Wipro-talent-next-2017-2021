@@ -1,0 +1,25 @@
+import java.util.*;
+class Main {
+	 
+
+	public static void main(String[] args) {
+    List<String> l = new ArrayList<>();
+		l.add("Element 1 ");
+		l.add("Element 2");
+		l.add("Element 3");
+		l.add("Element 4");
+		
+		printAll(l);
+	}
+
+	public static void printAll(List<String> l) {
+		Iterator<String> i = l.iterator();
+		
+		while (i.hasNext())
+			System.out.println(i.next());
+	}
+}
+
+		
+
+	
