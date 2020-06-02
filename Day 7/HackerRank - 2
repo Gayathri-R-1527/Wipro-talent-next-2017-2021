@@ -1,0 +1,78 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'countPerms' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static int countPerms(int n) {
+    // Write your code here
+    if (n == 1) return 5;
+
+        long mod = 1000000007L;
+
+        
+        long[] prev = new long[5];
+        long[] cur = new long[5];
+
+        long sumPrev = 4;
+        for (int j = 0; j < 5; j++) prev[j] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            
+            cur[0] = prev[1];
+            
+            cur[1] = (prev[0] + prev[2]) % mod;
+        
+            cur[2] = sumPrev;
+            
+            cur[3] = (prev[2] + prev[4]) % mod;
+            
+            cur[4] = prev[0];
+
+            sumPrev = 0;
+            for (int j = 0; j < 5; j++)
+            {
+                prev[j] = cur[j];
+                if (j != 2) 
+                sumPrev =sumPrev + prev[j];
+            }
+            sumPrev = sumPrev % mod;
+        }
+
+        long result = (cur[0] + cur[1] + cur[2] + cur[3] + cur[4]) % mod;
+
+        return (int)result;
+    }
+
+    }
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int result = Result.countPerms(n);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
