@@ -3,16 +3,16 @@ import java.util.Iterator;
 
 
  class Country {
-	TreeSet<String> H1 = new TreeSet<>();
+	TreeSet<String> ts = new TreeSet<>();
 	
 	
 	TreeSet<String> saveCountryNames(String CountryName) {
-		H1.add(CountryName);
-		return H1;
+		ts.add(CountryName);
+		return ts;
 	}
 	
 	public String getCountry(String CountryName) {
-		Iterator<String> it = H1.iterator();
+		Iterator<String> it = ts.iterator();
 		
 		while (it.hasNext()) {
 			if (it.next().equals(CountryName))
