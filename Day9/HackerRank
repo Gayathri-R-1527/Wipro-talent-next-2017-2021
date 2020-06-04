@@ -1,0 +1,174 @@
+CAR INHERITANCE:
+
+import java.util.Scanner;
+import java.io.*;
+
+
+abstract class Car {
+    protected boolean isSedan;
+    protected String seats;
+    
+    public Car(boolean isSedan, String seats) {
+        this.isSedan = isSedan;
+        this.seats = seats;
+    }
+    
+    public boolean getIsSedan() {
+        return this.isSedan;
+    }
+    
+    public String getSeats() {
+        return this.seats;
+    }
+    
+    abstract public String getMileage();
+    
+    public void printCar(String name) {
+        System.out.println( 
+          "A " + name + " is " + (this.getIsSedan() ? "" : "not ") 
+            + "Sedan, is " + this.getSeats() + "-seater, and has a mileage of around "
+            + this.getMileage() + ".");
+    }
+}
+// Write your code here.
+
+/**
+*   WagonR class
+**/
+
+class WagonR extends Car{
+    public int Mileage;
+    
+        public WagonR(int Mileage)  
+        {
+            super(false,"4");
+            this.Mileage = Mileage;
+        }
+        @Override
+        public String getMileage()
+        {
+            return Mileage + " kmpl";
+        }
+    }
+
+        
+
+/**
+*   HondaCity class
+**/
+class HondaCity extends Car{
+    
+        public int Mileage;
+
+        public HondaCity(int Mileage)  
+        {
+            super(true, "4");
+            this.Mileage = Mileage;
+        }
+        @Override
+        public  String getMileage()
+        {
+            return Mileage + " kmpl";
+        }
+    }
+/**
+*   InnovaCrysta class
+**/
+class InnovaCrysta extends Car{
+   
+        private int Mileage;
+
+        public InnovaCrysta(int Mileage) 
+        {
+            super(false, "6");
+            this.Mileage = Mileage;
+        }
+        @Override
+        public  String getMileage()
+        {
+            return Mileage + " kmpl";
+        }
+    }
+public class Solution {
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int carType = Integer.parseInt(bufferedReader.readLine().trim());
+        int carMileage = Integer.parseInt(bufferedReader.readLine().trim());
+        
+        if (carType == 0){
+            Car wagonR = new WagonR(carMileage);
+            wagonR.printCar("WagonR");
+        }
+        
+        if(carType == 1){
+            Car hondaCity = new HondaCity(carMileage);
+            hondaCity.printCar("HondaCity");
+        }
+        
+        if(carType == 2){
+            Car innovaCrysta = new InnovaCrysta(carMileage);
+            innovaCrysta.printCar("InnovaCrysta");
+        }
+    }
+}
+
+3)BIT LOGIC:
+
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'maxXor' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER lo
+     *  2. INTEGER hi
+     *  3. INTEGER k
+     */
+
+    public static int maxXor(int lo, int hi, int k) {
+    // Write your code here
+            for(int i=lo;i<k;i++)
+            {
+                for(int j=hi;j<k;j++)
+                {
+                   k=i-j;     
+                }
+            }
+            return k;
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int lo = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int hi = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int k = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int result = Result.maxXor(lo, hi, k);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
