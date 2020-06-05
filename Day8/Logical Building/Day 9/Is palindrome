@@ -1,0 +1,24 @@
+import java.io.*;
+import  java.util.*;
+class UsermainCode{
+public int isPalinNum(int input1){
+int rem=0,sum=0,temp;
+		temp=input1;
+		while(input1>0)
+		{
+			rem=input1%10;
+			sum=(sum*10)+rem;
+			input1/=10;
+
+		}
+		if(temp==sum)
+		{
+			return 2;
+		}
+		else
+			return 1;
+		
+		
+		
+	}
+}
