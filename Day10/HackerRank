@@ -1,0 +1,238 @@
+        1.PROFIT TARGETS:
+   
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'stockPairs' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY stocksProfit
+     *  2. LONG_INTEGER target
+     */
+
+    public static int stockPairs(List<Integer> stocksProfit, long target) {
+    // Write your code here
+     int n=stocksProfit.size();       
+    int[] g=new int[n];
+    
+    int i,j,count=0;
+    ArrayList<Integer> arr=new ArrayList<Integer>(n);
+    for(i=0;i<n;i++)
+    {
+        g[i]=stocksProfit.get(i);
+    }
+    for(i=0;i<n-1;i++)
+    {
+        if(arr.contains(g[i]))
+        {
+            continue;
+        }
+        for(j=i+1;j<n;j++)
+        {
+            if(g[i]+g[j]==target)
+            {
+                if(arr.contains(g[j]))
+                {
+                    continue;
+                }
+                arr.add(g[i]);
+                arr.add(g[j]);
+                count++;
+            }
+        }
+    }
+    return count;
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int stocksProfitCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> stocksProfit = new ArrayList<>();
+
+        for (int i = 0; i < stocksProfitCount; i++) {
+            int stocksProfitItem = Integer.parseInt(bufferedReader.readLine().trim());
+            stocksProfit.add(stocksProfitItem);
+        }
+
+        long target = Long.parseLong(bufferedReader.readLine().trim());
+
+        int result = Result.stockPairs(stocksProfit, target);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+        3.SHARED INTEREST:
+        
+        import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'maxShared' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts WEIGHTED_INTEGER_GRAPH friends as parameter.
+     */
+
+    /*
+     * For the weighted graph, <name>:
+     *
+     * 1. The number of nodes is <name>Nodes.
+     * 2. The number of edges is <name>Edges.
+     * 3. An edge exists between <name>From[i] and <name>To[i]. The weight of the edge is <name>Weight[i].
+     *
+     */
+
+    public static int maxShared(int friendsNodes, List<Integer> friendsFrom, List<Integer> friendsTo, List<Integer> friendsWeight) {
+
+for(int i=0;i>0;i++)
+{
+    for(int j=0;j<i;j++)
+    {
+        for(int k:friends_edge)
+    }
+}
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String[] friendsNodesEdges = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        int friendsNodes = Integer.parseInt(friendsNodesEdges[0]);
+        int friendsEdges = Integer.parseInt(friendsNodesEdges[1]);
+
+        List<Integer> friendsFrom = new ArrayList<>();
+        List<Integer> friendsTo = new ArrayList<>();
+        List<Integer> friendsWeight = new ArrayList<>();
+
+        for (int i = 0; i < friendsEdges; i++) {
+            String[] friendsFromToWeight = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+            friendsFrom.add(Integer.parseInt(friendsFromToWeight[0]));
+            friendsTo.add(Integer.parseInt(friendsFromToWeight[1]));
+            friendsWeight.add(Integer.parseInt(friendsFromToWeight[2]));
+        }
+
+        int result = Result.maxShared(friendsNodes, friendsFrom, friendsTo, friendsWeight);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+    
+                      2. ONES GROUP:
+                      
+  import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'onesGroups' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. 2D_INTEGER_ARRAY grid
+     *  2. INTEGER_ARRAY queries
+     */
+
+    public static List<Integer> onesGroups(List<List<Integer>> grid, List<Integer> queries) {
+    // Write your code here
+    int[] i= new int[n];
+
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int gridRows = Integer.parseInt(bufferedReader.readLine().trim());
+        int gridColumns = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<List<Integer>> grid = new ArrayList<>();
+
+        for (int i = 0; i < gridRows; i++) {
+            String[] gridRowTempItems = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+            List<Integer> gridRowItems = new ArrayList<>();
+
+            for (int j = 0; j < gridColumns; j++) {
+                int gridItem = Integer.parseInt(gridRowTempItems[j]);
+                gridRowItems.add(gridItem);
+            }
+
+            grid.add(gridRowItems);
+        }
+
+        int queriesCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> queries = new ArrayList<>();
+
+        for (int i = 0; i < queriesCount; i++) {
+            int queriesItem = Integer.parseInt(bufferedReader.readLine().trim());
+            queries.add(queriesItem);
+        }
+
+        List<Integer> result = Result.onesGroups(grid, queries);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+        
