@@ -1,0 +1,24 @@
+import java.io.*;
+import  java.util.*;
+class UserMainCode{
+public int EvenOddDigitsSum(int input1,string input2){
+int esum = 0,osum = 0,rem;
+		
+		while (input1 != 0) {
+			rem = input1 % 10;
+			
+			if (input2.equals("even") && rem % 2 == 0) 
+				esum =esum+ rem;
+
+			if (input2.equals("odd") && rem % 2 == 1)	
+				osum += rem;
+			
+			input1 /= 10;
+		}
+		
+		if (input2.equals("even"))
+			 return esum;
+		else 
+		return osum;
+	}
+}
