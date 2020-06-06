@@ -2,13 +2,11 @@ import.java.io.*;
 import java.io.util;
 class UserMainCode{
 public String addNumberstrings(String input1,String input2){
-int sout;
+	
+		BigDecimal a = new BigDecimal(input1);
+		BigDecimal b = new BigDecimal(input2);
 		
-		int a = Integer.parseInt(input1);
-		int b = Integer.parseInt(input2);
-		sout=a+b;
-		String s= Integer.toString(sout);
-		return s;
+		return String.valueOf(a.add(b));
 		
 		
 		
