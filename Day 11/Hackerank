@@ -1,0 +1,178 @@
+    THE LARGEST STRING:
+    
+    import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'getLargestString' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts following parameters:
+     *  1. STRING s
+     *  2. INTEGER k
+     */
+
+    public static String getLargestString(String s, int k) {
+    // Write your code here
+    int count=0;
+    for(int i=0;i>=0;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            count++;
+        }
+    }
+
+    }
+
+    }
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        int k = Integer.parseInt(bufferedReader.readLine().trim());
+
+        String result = Result.getLargestString(s, k);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+2.   STRING REDUCTION:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'getMinDeletions' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static int getMinDeletions(String s) {
+        
+    // Write your code here
+     final int max = 26;
+    int n = s.length(); 
+          
+        if(n==max)
+            return -1; 
+          
+        
+        int dcount = 0; 
+        int count[] = new int[max]; 
+          
+        
+        for(int i = 0; i < max; i++) 
+            count[i] = 0; 
+          
+        for (int i = 0; i < n; i++) 
+        { 
+            if(count[s.charAt(i)-'a'] == 0) 
+                dcount++; 
+            count[s.charAt(i)-'a']++; 
+        } 
+          
+        
+        return (n-dcount); 
+    } 
+    }
+
+    
+
+    
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        int result = Result.getMinDeletions(s);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+3.CIRCULAR PRINTER:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'getTime' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static long getTime(String s) {
+        final int MAX_CHAR = 26;
+    // Write your code here
+    int start=1;
+    for(String str:s)
+    {
+     start+=1;
+    return start;
+    }
+    
+   
+   
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        long result = Result.getTime(s);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
