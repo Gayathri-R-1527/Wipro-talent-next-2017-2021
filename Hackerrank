@@ -1,0 +1,140 @@
+      2.CUT THE BAMBOO:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'cutBamboo' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY lengths as parameter.
+     */
+
+    public static List<Integer> cutBamboo(List<Integer> lengths) {
+    // Write your code here
+    List<Integer> li = new ArrayList<>();
+         int[] s = new int[1000];
+        for(int i = 1; i<lengths.size(); i++) {
+            int sLen = lengths.size();
+            s[sLen]++;
+        }
+    int rems =lengths.size();
+    li.add(rems);
+        
+       for(int i = 0; i <s.length; i++) {
+            if(s[i] > 0) {
+                rems -= s[i];
+                li.add(rems);
+                }
+                
+                }
+               return li; 
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int lengthsCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> lengths = new ArrayList<>();
+
+        for (int i = 0; i < lengthsCount; i++) {
+            int lengthsItem = Integer.parseInt(bufferedReader.readLine().trim());
+            lengths.add(lengthsItem);
+        }
+
+        List<Integer> result = Result.cutBamboo(lengths);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+        1.ANCESTRAL NAMES:
+        
+  import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'sortRoman' function below.
+     *
+     * The function is expected to return a STRING_ARRAY.
+     * The function accepts STRING_ARRAY names as parameter.
+     */
+
+    public static List<String> sortRoman(List<String> names) {
+    // Write your code here
+    List<String> ls = new ArrayList<>();
+    for(String n: names)
+    {
+       ls= Arrays.sort(n);
+    }
+    return ls;
+           
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int namesCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<String> names = new ArrayList<>();
+
+        for (int i = 0; i < namesCount; i++) {
+            String namesItem = bufferedReader.readLine();
+            names.add(namesItem);
+        }
+
+        List<String> result = Result.sortRoman(names);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(result.get(i));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
