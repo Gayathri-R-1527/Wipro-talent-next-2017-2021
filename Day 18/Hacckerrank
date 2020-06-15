@@ -1,0 +1,267 @@
+2.K-SUBSEQUENCES
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'kSub' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY nums
+     */
+
+    public static long kSub(int k, List<Integer> nums) {
+    // Write your code here
+ 
+    String[] n = new String[nums.size()];
+    nums.toArray(n);
+ 
+    int [] sum = new int[n.length];
+    long count = 0;    
+    sum[0] = Integer.parseInt(n[0]);
+    
+    for(int i = 1; i < n.length; i++){
+        sum[i] = sum[i-1] + Integer.parseInt(n[i]);
+    }
+    
+    int [] kVal = new int[k];
+    
+    for(int i = 0; i < sum.length; i++){       
+        int mod = sum[i] % k;
+
+        if(mod == 0)
+            count++;
+
+        count += kVal[mod];
+        kVal[mod] += 1;
+             
+    }
+     return count;     
+}
+   
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int k = Integer.parseInt(bufferedReader.readLine().trim());
+
+        int numsCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> nums = new ArrayList<>();
+
+        for (int i = 0; i < numsCount; i++) {
+            int numsItem = Integer.parseInt(bufferedReader.readLine().trim());
+            nums.add(numsItem);
+        }
+
+        long result = Result.kSub(k, nums);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+1.CONDENSED LIST:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class SinglyLinkedListNode {
+    public int data;
+    public SinglyLinkedListNode next;
+
+    public SinglyLinkedListNode(int nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+}
+
+class SinglyLinkedList {
+    public SinglyLinkedListNode head;
+    public SinglyLinkedListNode tail;
+
+    public SinglyLinkedList() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    public void insertNode(int nodeData) {
+        SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+
+        if (this.head == null) {
+            this.head = node;
+        } else {
+            this.tail.next = node;
+        }
+
+        this.tail = node;
+    }
+}
+
+class SinglyLinkedListPrintHelper {
+    public static void printList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+        while (node != null) {
+            bufferedWriter.write(String.valueOf(node.data));
+
+            node = node.next;
+
+            if (node != null) {
+                bufferedWriter.write(sep);
+            }
+        }
+    }
+}
+
+
+
+class Result {
+
+    /*
+     * Complete the 'condense' function below.
+     *
+     * The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+     * The function accepts INTEGER_SINGLY_LINKED_LIST head as parameter.
+     */
+
+    /*
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
+     */
+
+    public static SinglyLinkedListNode condense(SinglyLinkedListNode head) {
+    // Write your code here
+    if(head==null)
+    {
+        
+    }
+
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        SinglyLinkedList head = new SinglyLinkedList();
+
+        int headCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        for (int i = 0; i < headCount; i++) {
+            int headItem = Integer.parseInt(bufferedReader.readLine().trim());
+
+            head.insertNode(headItem);
+        }
+
+        SinglyLinkedListNode result = Result.condense(head.head);
+
+        SinglyLinkedListPrintHelper.printList(result, "\n", bufferedWriter);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
+
+3.PERUMUTATIONS DIVISIBLE BY 8:
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'checkDivisibility' function below.
+     *
+     * The function is expected to return a STRING_ARRAY.
+     * The function accepts STRING_ARRAY arr as parameter.
+     */
+
+    public static List<String> checkDivisibility(List<String> arr) {
+    // Write your code here
+    
+    int rev=0;
+     int rev_n=0,num=0;
+     for(String i:arr)
+     {
+            
+           while(i!=0)
+            {
+                rev=rev*10;
+                rev_n=rev+ num%10;
+             num=num/10;
+            }
+     }
+        
+        if(rev_n%8==0)
+        return "YES";
+        else
+        return "NO";
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int arrCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<String> arr = new ArrayList<>();
+
+        for (int i = 0; i < arrCount; i++) {
+            String arrItem = bufferedReader.readLine();
+            arr.add(arrItem);
+        }
+
+        List<String> result = Result.checkDivisibility(arr);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(result.get(i));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
